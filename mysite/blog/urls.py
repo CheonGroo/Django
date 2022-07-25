@@ -8,5 +8,6 @@ from . import models
 urlpatterns = [
     path('', views.index),
     path('post_list/', views.post_list),
-    path('post_detail/<int:pk>/', views.post_detail)
+    path('post_detail/<int:pk>/', views.post_detail),
+    path('post_create/', views.post_create, name="create")
 ]

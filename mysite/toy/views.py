@@ -8,3 +8,4 @@ def gugu(req, num):
 def naver(req):
     res = request.get("https://naver,com/")
     return HttpResponse(res.text)
+

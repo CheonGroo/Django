@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from polls.models import Question as Poll
-from polls import models
+from blog import models
 
 class Command(BaseCommand):
     help = 'Create Post'
@@ -10,6 +9,8 @@ class Command(BaseCommand):
         parser.add_argument('content', type=str)
 
     def handle(self, *args, **options):
-        q = models.Question.objects.create(title=options['title'],content=options['content'])
-        q.save()
-        self.stdout.write(self.style.SUCCESS(f'Successfully Create Post "{q.id}"'))
+        p = models.Post(title=options['title'],
+                        content=options['content'])
+        p.save()
+
+        self.stdout.write(self.style.SUCCESS(f'Successfully Created Post "{p.id}"'))

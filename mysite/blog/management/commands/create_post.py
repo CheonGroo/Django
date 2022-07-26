@@ -3,7 +3,7 @@ from polls.models import Question as Poll
 from polls import models
 
 class Command(BaseCommand):
-    help = 'Closes the specified poll for voting'
+    help = 'Create Post'
 
     def add_arguments(self, parser):
         parser.add_argument('title', type=str)
@@ -12,4 +12,4 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         q = models.Question.objects.create(title=options['title'],content=options['content'])
         q.save()
-        self.stdout.write(self.style.SUCCESS(f'Successfully closed Question "{q.id}"'))
+        self.stdout.write(self.style.SUCCESS(f'Successfully Create Post "{q.id}"'))

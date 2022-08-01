@@ -38,11 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'toy',
-    'polls',
+
     'rest_framework',
-    'api',
+
+    'blog.apps.BlogConfig', # 'blog'
+    'toy.apps.ToyConfig', # 'toy'
+    'polls.apps.PollsConfig', # 'polls'
+    'api.apps.ApiConfig', # 'polls'
+    
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
